@@ -1,48 +1,36 @@
-import React, { useState } from 'react'
+import React from 'react'
+import ph from '../assets/images/50.jpg'
+import { history } from '../redux'
 
 const Header = () => {
-  const [toggled, toggle] = useState(false)
-
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
-        <svg
-          className="fill-current h-8 w-8 mr-2"
-          width="54"
-          height="54"
-          viewBox="0 0 54 54"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
-        </svg>
-        <button
-          type="button"
-          id="toggle-button"
-          className="font-semibold text-xl tracking-tight"
-          onClick={() => toggle(!toggled)}
-        >
-          Tailwind CSS
-        </button>
-      </div>
-      {toggled && (
-        <div id="menu" className="block">
-          <button
-            type="button"
-            className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
-            onClick={() => window.location.assign('https://www.google.com/')}
-          >
-            <svg
-              className="fill-current h-3 w-3"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
+    <div>
+      <div
+        className="container mx-auto rounded-b-lg shadow-xl bg-cover bg-bottom"
+        style={{ backgroundImage: `url(${ph})` }}
+      >
+        <nav className="flex justify-between p-8  items-center mb-16">
+          <p className="font-sans text-gray-300 text-sm md:text-4xl font-thin">Denys & Angelina</p>
+          <ul className="list-reset flex">
+            <li>
+              <button
+                type="button"
+                className="text-gray-300 text-2xl p-2 md:p-4 font-thin underline"
+                onClick={() => {
+                  history.push('/gallery')
+                }}
+              >
+                Gallery
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div className="text-center text-white pb-48 pt-48 shadow-xl">
+          <h1 className="font-sans font-thin">We have been merried since:</h1>
+          <h2 className="font-thin text-sm tracking-wide mt-5 mb-10">June 20, 2020</h2>
         </div>
-      )}
-    </nav>
+      </div>
+    </div>
   )
 }
 

@@ -1,17 +1,12 @@
 import React from 'react'
-
-import { Link } from 'react-router-dom'
+import dubai from '../assets/images/01.jpg'
+import db from '../assets/images/02.jpg'
 
 const Dashboard = () => {
   return (
-    <div>
-      <div className="flex items-center justify-center h-screen">
-        <div className="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-10">
-          <div id="title">Dashboard</div>
-          <Link to="/dashboard/profile/4ab8b240-23a8-42e3-9a0a-6db723849ea7">Go To Profile</Link>
-          <Link to="/dashboard/main">Go To Main</Link>
-        </div>
-      </div>
+    <div className="  w-48 h-48">
+      <img className="p-4" src={dubai} alt="dubai" />
+      <img className="p-4" src={db} alt="db" />
     </div>
   )
 }
