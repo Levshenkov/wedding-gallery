@@ -10,12 +10,12 @@ const Header = () => {
         style={{ backgroundImage: `url(${ph})` }}
       >
         <nav className="flex justify-between p-8  items-center mb-16">
-          <p className="font-sans text-gray-300 text-sm md:text-4xl font-thin">Denys & Angelina</p>
+          <p className="font-sans text-gray-300 text-sm md:text-3xl font-thin">Denys & Angelina</p>
           <ul className="list-reset flex">
             <li>
               <button
                 type="button"
-                className="text-gray-300 text-2xl p-2 md:p-4 font-thin underline"
+                className="text-gray-300 text-sm md:text-3xl p-2 md:p-4 font-thin underline"
                 onClick={() => {
                   history.push('/gallery')
                 }}

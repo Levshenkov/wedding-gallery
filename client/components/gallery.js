@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import Gallery from 'react-photo-gallery'
 import Carousel, { Modal, ModalGateway } from 'react-images'
+import GHeader from './Gallery-header'
 
 import { photos } from './photos'
 
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div>
+      <GHeader />
       <Gallery photos={photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
@@ -36,6 +38,9 @@ function App() {
           </Modal>
         ) : null}
       </ModalGateway>
+      <p className="pt-4 text-gray-600 text-sm font-sans font-thin text-center">
+        Copyright © 2020 Levshenkov Inc. All rights reserved.
+      </p>
     </div>
   )
 }
